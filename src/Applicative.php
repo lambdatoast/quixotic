@@ -1,7 +1,5 @@
 <?php
 
-//include 'Functor.php';
-
 abstract class Applicative extends Functor {
 
   // Minimal complete definition of an Applicative Functor.
