@@ -1,7 +1,7 @@
 {
     "name": "lambdatoast/quixotic",
     "description": "Functional and algebraic abstractions",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "keywords": ["fp"],
     "homepage": "http://github.com/lambdatoast/quixotic",
     "type": "library",
@@ -13,6 +13,9 @@
             "homepage": "http://lambdatoast.com"
         }
     ],
+    "autoload": {
+        "classmap": ["src/"]
+    },
     "require": {
         "php": ">=5.3.0"
     }
