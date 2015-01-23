@@ -12,21 +12,14 @@ abstract class Applicative extends Functor {
 
   static public function liftA2(callable $f, Applicative $a, Applicative $b) {
     // Haskell implementation: `f <$> a <*> b`
-    return $a->map(function ($x) use ($f) {
-      return function ($y) use ($f, $x) {
-        return $f($x, $y);
-      };
-    })->ap($b);
+    return $a->map(Curry::curry2($f))->ap($b);
+
   }
   static public function liftA3(callable $f, Applicative $a, Applicative $b, Applicative $c) {
     // Haskell implementation: `f <$> a <*> b <*> c`
-    return $a->map(function ($x) use ($f) {
-      return function ($y) use ($f, $x) {
-        return function ($z) use ($f, $x, $y) {
-          return $f($x, $y, $z);
-        };
-      };
-    })->ap($b)->ap($c);
+    return $a->map(Curry::curry3($f))
+             ->ap($b)
+             ->ap($c);
   }
 }
 

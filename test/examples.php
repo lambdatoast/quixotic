@@ -48,7 +48,7 @@ function program($uid) {
   }
 
   function validate_user_data($raw_name, $raw_age) {
-    return (new Success(function ($name) { return function ($age) use ($name) { return new User($name, $age); }; }))
+    return (new Success(Curry::curry2(function ($name, $age) { return new User($name, $age); })))
              ->ap(name_long_enough($raw_name))
              ->ap(age_old_enough($raw_age));
   }
@@ -77,6 +77,12 @@ function program($uid) {
     // Applicative Validation in action
     validate_user_data("teresa", 18),
     validate_user_data("bob", 17),
+
+    (new Success(Curry::curry3(function ($x, $y, $z) {
+      return $x + $y + $z;
+    })))->ap(new Success(4))
+        ->ap(new Success(4))
+        ->ap(new Success(4)),
   );
 
   return $test_results;
