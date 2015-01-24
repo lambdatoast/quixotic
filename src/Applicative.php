@@ -25,10 +25,10 @@ abstract class Applicative extends Functor {
    * @param  Applicative $b
    * @return Applicative
    */
-  static public function chooseR(Applicative $a, Applicative $b) {
+  public function chooseR(Applicative $b) {
     return Applicative::liftA2(function ($a, $b) {
       return $b;
-    }, $a, $b);
+    }, $this, $b);
   }
 
   /**
@@ -37,8 +37,8 @@ abstract class Applicative extends Functor {
    * @param  Applicative $b
    * @return Applicative
    */
-  static public function chooseL(Applicative $a, Applicative $b) {
-    return Applicative::liftA2(array('Basics', 'constant'), $a, $b);
+  public function chooseL(Applicative $b) {
+    return Applicative::liftA2(array('Basics', 'constant'), $this, $b);
   }
 
   static public function liftA2(callable $f, Applicative $a, Applicative $b) {
