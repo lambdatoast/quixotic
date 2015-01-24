@@ -1,6 +1,6 @@
 <?php
 
-abstract class Maybe extends Applicative implements Alternative {
+abstract class Maybe extends Monad implements Alternative {
 
   public static final function of($x) {
     return new Some($x);

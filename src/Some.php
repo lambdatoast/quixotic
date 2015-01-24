@@ -7,6 +7,14 @@ final class Some extends Maybe {
     $this->value = $value;
   }
 
+  public function isSome() {
+    return true;
+  }
+
+  public function isNone() {
+    return false;
+  }
+
   // Functor instance implementation
 
   public function map(callable $f) {
@@ -19,13 +27,12 @@ final class Some extends Maybe {
     return $x->map($this->value);
   }
 
-  public function isSome() {
-    return true;
+  // Monad instance implementation
+
+  public function chain(callable $f) {
+    return $f($this->value);
   }
 
-  public function isNone() {
-    return false;
-  }
 }
 
 
