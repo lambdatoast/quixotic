@@ -1,6 +1,12 @@
 <?php
 
-abstract class Functor {
-  abstract public function map(callable $f);
+interface Functor {
+
+  /**
+   * @param callable
+   * @return Functor
+   */
+  public function map(callable $f);
+
 }
 

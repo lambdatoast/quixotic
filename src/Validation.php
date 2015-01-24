@@ -1,6 +1,8 @@
 <?php
 
-abstract class Validation extends Applicative implements Alternative {
+abstract class Validation implements Applicative, Alternative {
+
+  use ApplicativeSyntax;
 
   public static final function of($x) {
     return new Success($x);
