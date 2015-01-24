@@ -18,6 +18,14 @@ final class Some extends Maybe {
   public function ap(Applicative $x) {
     return $x->map($this->value);
   }
+
+  public function isSome() {
+    return true;
+  }
+
+  public function isNone() {
+    return false;
+  }
 }
 
 
