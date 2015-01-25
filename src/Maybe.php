@@ -1,6 +1,6 @@
 <?php
 
-abstract class Maybe implements Alternative, Monad {
+abstract class Maybe implements Alternative, Monad, Equal {
 
   use ApplicativeSyntax;
 

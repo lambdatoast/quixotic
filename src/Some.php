@@ -15,6 +15,13 @@ final class Some extends Maybe {
     return false;
   }
 
+  // Equal instance implementation
+
+  public function equal(Equal $y) {
+    return $y->isSome() ? $this->value === $y->value
+                        : false;
+  }
+
   // Functor instance implementation
 
   public function map(callable $f) {

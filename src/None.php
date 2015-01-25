@@ -10,6 +10,13 @@ final class None extends Maybe {
     return true;
   }
 
+  // Equal instance implementation
+
+  public function equal(Equal $y) {
+    return $y->isNone() ? true
+                        : false;
+  }
+
   // Functor instance implementation
 
   public function map(callable $f) {
