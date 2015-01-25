@@ -17,7 +17,7 @@ final class Some extends Maybe {
 
   // Equal instance implementation
 
-  public function equal(Equal $y) {
+  public function equal($y) {
     return $y->isSome() ? $this->value === $y->value
                         : false;
   }
