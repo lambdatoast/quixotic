@@ -7,6 +7,8 @@ These abstractions are meant to help you design programs in a functional style, 
 1. Functions are proper, pure functions (as opposed to happy-go-lucky subroutines that cause side-effects and are a pain to test and/or reason about)
 2. Effects are eventually achieved, and precisely controlled, by interpreting values that describe them.
 
+[![Build Status](https://secure.travis-ci.org/lambdatoast/quixotic.png?branch=master)](http://travis-ci.org/lambdatoast/quixotic)
+
 ## Getting Quixotic
 
 If you're using Composer (which you should), you can get it by having something like this in 
