@@ -1,5 +1,5 @@
 <?php
 
 interface Equal {
-  public function equal(Equal $x);
+  public function equal($x);
 }
