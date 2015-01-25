@@ -1,7 +1,7 @@
 {
     "name": "lambdatoast/quixotic",
     "description": "Functional and algebraic abstractions",
-    "version": "0.4.0",
+    "version": "0.5.0",
     "keywords": ["functional programming"],
     "homepage": "http://github.com/lambdatoast/quixotic",
     "type": "library",
