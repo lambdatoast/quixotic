@@ -3,6 +3,7 @@
 interface Functor {
 
   /**
+   * Structure preserving transformation.
    * @param callable
    * @return Functor
    */

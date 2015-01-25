@@ -21,5 +21,10 @@ abstract class Either implements Alternative, Monad {
                             : $b;
   }
 
+  public function lazy_or_(callable $fb) {
+    return $this->isRight() ? $this
+                            : $fb();
+  }
+
 }
 
