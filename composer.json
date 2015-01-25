@@ -2,7 +2,7 @@
     "name": "lambdatoast/quixotic",
     "description": "Functional and algebraic abstractions",
     "version": "0.4.0",
-    "keywords": ["fp"],
+    "keywords": ["functional programming"],
     "homepage": "http://github.com/lambdatoast/quixotic",
     "type": "library",
     "license": "MIT",
@@ -18,6 +18,9 @@
     },
     "require": {
         "php": ">=5.4.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0"
     }
 }
 
