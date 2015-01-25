@@ -10,6 +10,12 @@ class Basics {
     return $a;
   }
 
+  static function compose($f, $g) {
+    return function ($x) use ($f, $g) {
+      return $f($g($x));
+    };
+  }
+
   static function curry2(callable $f) {
     return function ($a) use ($f) { 
       return function ($b) use ($f, $a) { 
