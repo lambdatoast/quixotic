@@ -9,7 +9,7 @@ These abstractions are meant to help you design programs in a functional style, 
 
 ## Getting Quixotic
 
-If you're using Composer (which you should), you can get it by having this in 
+If you're using Composer (which you should), you can get it by having something like this in 
 your composer.json:
 
     {
