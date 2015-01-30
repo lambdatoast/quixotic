@@ -6,8 +6,10 @@ class Basics {
     return $a;
   }
 
-  static function constant($a, $b) {
-    return $a;
+  static function constant($a) {
+    return function () use ($a) {
+      return $a;
+    };
   }
 
   static function compose($f, $g) {
