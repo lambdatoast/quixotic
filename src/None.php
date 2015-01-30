@@ -2,19 +2,17 @@
 
 final class None extends Maybe {
 
-  public function isSome() {
-    return false;
-  }
-
-  public function isNone() {
-    return true;
+  public function fold(callable $none, callable $_) {
+    return $none();
   }
 
   // Equal instance implementation
 
   public function equal($y) {
-    return $y->isNone() ? true
-                        : false;
+    return $y->fold(
+      Basics::constant(true),
+      Basics::constant(false)
+    );
   }
 
   // Functor instance implementation

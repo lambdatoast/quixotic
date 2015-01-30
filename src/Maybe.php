@@ -12,13 +12,13 @@ abstract class Maybe implements Alternative, Monad, Equal {
     return is_null($x) ? new None : new Some($x);
   }
 
-  abstract public function isSome();
-
-  abstract public function isNone();
+  abstract public function fold(callable $none, callable $some);
 
   public function or_(Alternative $b) {
-    return $this->isSome() ? $this
-                           : $b;
+    return $this->fold(
+      Basics::constant($b),
+      Basics::constant($this)
+    );
   }
 
 }

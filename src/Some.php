@@ -7,19 +7,17 @@ final class Some extends Maybe {
     $this->value = $value;
   }
 
-  public function isSome() {
-    return true;
-  }
-
-  public function isNone() {
-    return false;
+  public function fold(callable $_, callable $some) {
+    return $some($this->value);
   }
 
   // Equal instance implementation
 
   public function equal($y) {
-    return $y->isSome() ? $this->value === $y->value
-                        : false;
+    return $y->fold(
+      Basics::constant(false),
+      function ($v) { return $v === $this->value; }
+    );
   }
 
   // Functor instance implementation
@@ -41,5 +39,3 @@ final class Some extends Maybe {
   }
 
 }
-
-
